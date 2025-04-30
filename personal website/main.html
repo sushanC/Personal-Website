@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black; 
+      color: #fff; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px; 
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    .box {
+      flex: 1 1 calc(50% - 20px); 
+      padding: 20px;
+      background-color: #1a1a1a;
+      border: 2px solid #ff0000; 
+      border-radius: 10px;
+      box-shadow: 0 0 15px #ff0000; 
+      text-align: center;
+    }
+
+    .box h2 {
+      color: #ff0000; 
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .box p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .box {
+        flex: 1 1 100%; 
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <h2>Who I Am</h2>
+      <p>
+        Hi, I'm <strong>[User Name]</strong>, a dedicated <strong>web developer</strong> I loves crafting solutions 
+        and exploring new ideas in the tech world.
+      </p>
+    </div>
+    <div class="box">
+      <h2>What I Do</h2>
+      <p>
+        I specialize in <strong>web development</strong>, creating impactful projects that range from 
+        <strong>project type</strong> to <strong>other expertise</strong>.
+      </p>
+    </div>
+    <div class="box">
+      <h2>My Passion</h2>
+      <p>
+        I’m driven by curiosity and innovation, always staying updated with the latest trends in <strong>Artificial Intelligence and Machine learning</strong>. 
+      </p>
+    </div>
+    <div class="box">
+      <h2>Let’s Connect</h2>
+      <p>
+        Ready to create something amazing? Reach out to me <a href="mailto:example.01@gmail.com" style="color: #ff0000; text-decoration: none;">here</a>.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

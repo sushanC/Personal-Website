@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Personal Website</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">MyWebsite</div>
+      <ul class="nav-links">
+        <li><a href="./main.html">About</a></li>
+        <li><a href="./port.html">Skills</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I am Sushan Achar</h1>
+    <div class="hero-content">
+      <h1 class="typewriter">"Welcome to my website"</h1>
+      <p>Welcome to a world where creativity meets functionality.</p>
+      <a href="#projects" class="btn">Discover More</a>
+    </div>
+  </section>
+
+  <section id="projects" class="projects-section">
+    <h2>My Projects</h2>
+    <div class="projects-profile-wrapper">
+      
+      <div class="profile-section">
+        <div class="profile-card">
+          <img src="./images/sushan.jpg" alt="Profile Photo" class="profile-photo">
+          <h3>Sushan Achar</h3>
+          <p class="bio">
+            A passionate developer with a love for creating interactive and functional websites.
+            Always eager to learn and explore new technologies.
+          </p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>Example@example.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kathmandu, Nepal</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+977 9876543210</span>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/sushan" target="_blank">GitHub</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-linkedin"></i>
+              <a href="https://linkedin.com/in/sushan" target="_blank">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="projects-container">
+        
+        <div class="project-card">
+          <img src="" alt="Project 1">
+          <p>Description</p>
+          <div class="interaction-icons">
+            <i class="fa fa-heart like-btn"></i>
+            <i class="fa fa-comment comment-btn"></i>
+            <i class="fa fa-share share-btn"></i>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="post-comment">Post</button>
+          </div>
+          <ul class="comments-list"></ul>
+        </div>
+        <div class="project-card">
+          <img src="./images/screen1.png" alt="Project 1">
+          <p>Description</p>
+          <div class="interaction-icons">
+            <i class="fa fa-heart like-btn"></i>
+            <i class="fa fa-comment comment-btn"></i>
+            <i class="fa fa-share share-btn"></i>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="post-comment">Post</button>
+          </div>
+          <ul class="comments-list"></ul>
+        </div>
+        <div class="project-card">
+          <img src="./images/screen2.png" alt="Project 1">
+          <p>Description</p>
+          <div class="interaction-icons">
+            <i class="fa fa-heart like-btn"></i>
+            <i class="fa fa-comment comment-btn"></i>
+            <i class="fa fa-share share-btn"></i>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="post-comment">Post</button>
+          </div>
+          <ul class="comments-list"></ul>
+        </div>
+        <div class="project-card">
+          <img src="./images/project1.jpg" alt="Project 1">
+          <p>Description</p>
+          <div class="interaction-icons">
+            <i class="fa fa-heart like-btn"></i>
+            <i class="fa fa-comment comment-btn"></i>
+            <i class="fa fa-share share-btn"></i>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="post-comment">Post</button>
+          </div>
+          <ul class="comments-list"></ul>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      document.querySelectorAll(".like-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          this.classList.toggle("liked");
+        });
+      });
+
+      
+      document.querySelectorAll(".comment-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          let commentSection = this.parentElement.nextElementSibling;
+          commentSection.style.display = commentSection.style.display === "block" ? "none" : "block";
+        });
+      });
+
+     
+      document.querySelectorAll(".post-comment").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          let inputField = this.previousElementSibling;
+          let commentText = inputField.value.trim();
+          if (commentText !== "") {
+            let commentList = this.parentElement.nextElementSibling;
+            let newComment = document.createElement("li");
+            newComment.textContent = commentText;
+            commentList.appendChild(newComment);
+            inputField.value = "";
+          }
+        });
+      });
+
+      
+      document.querySelectorAll(".share-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          navigator.clipboard.writeText(window.location.href);
+          alert("Project link copied to clipboard!");
+        });
+      });
+    });
+    
+document.querySelectorAll(".project-card").forEach((card) => {
+  card.addEventListener("click", function () {
+    let imgSrc = this.querySelector("img").src;
+    let description = this.querySelector("p").textContent;
+
+    document.getElementById("modalImage").src = imgSrc;
+    document.getElementById("modalDescription").textContent = description;
+
+    document.getElementById("projectModal").style.display = "block";
+  });
+});
+
+
+document.querySelector(".close-btn").addEventListener("click", function () {
+  document.getElementById("projectModal").style.display = "none";
+});
+
+
+window.addEventListener("click", function (e) {
+  if (e.target == document.getElementById("projectModal")) {
+    document.getElementById("projectModal").style.display = "none";
+  }
+});
+
+  </script>
+  <div id="projectModal" class="modal">
+    <span class="close-btn">&times;</span>
+    <img class="modal-img" id="modalImage">
+    <div class="modal-description" id="modalDescription"></div>
+  </div>
+  
+</body>
+</html>
